@@ -17,11 +17,13 @@ const Login = props => {
     axiosWithAuth()
     .post('/api/login', credentials)
     .then(res => {
-      //console.log(res)
+      console.log(res)
       window.localStorage.setItem('token', res.data.payload)
       props.history.push('/bubbles')
     })
     .catch(err => console.log('error in Login', err))
+
+    
   }
 
 
